@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 def fizzbuzz():
     for a in range(1, 101):
         if a % 5 == 0 and a % 3 == 0:
@@ -8,6 +8,6 @@ def fizzbuzz():
             print("Buzz", end=" ")
             continue
         elif a % 3 == 0:
-            print("Fizz", end = "")
+            print("Fizz", end=" ")
             continue
-        print(a, end = " ")
+        print(a, end=" ")
