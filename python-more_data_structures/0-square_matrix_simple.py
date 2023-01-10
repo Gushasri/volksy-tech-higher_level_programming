@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    if not matrix:
-        print()
-    return [[item**2 for item in row] for row in matrix]
+    response = []
+    for row in matrix:
+        sub_matrix = map(lambda num: num**2, row)
+        response.append(list(sub_matrix))
+    return response
