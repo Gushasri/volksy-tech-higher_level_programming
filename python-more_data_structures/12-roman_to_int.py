@@ -1,52 +1,24 @@
-def check_digit(string, nums):
-    for i in nums:
-        if i in string:
-            return list(reversed(nums)).index(i) + 1
-    return -1
-
-
-def convert_roman_to_int(string):
-    thousand = check_digit(string, thousands)
-    if thousand != -1:
-        delete = thousands[thousand - 1]
-        string = string.replace(delete, '')
-    else:
-        thousand = 0
-    hundred = check_digit(string, hundreds)
-    if hundred != -1:
-        delete = hundreds[hundred - 1]
-        string = string.replace(delete, '')
-    else:
-        hundred = 0
-    ten = check_digit(string, tens)
-    if ten != -1:
-        delete = tens[ten - 1]
-        string = string.replace(delete, '')
-    else:
-        ten = 0
-    digit = check_digit(string, digits)
-    if digit != -1:
-        delete = digits[digit - 1]
-        string = string.replace(delete, '')
-    else:
-        digit = 0
-    return thousand * 1000 + hundred * 100 + ten * 10 + digit
-
-
-def check_input(string):
-    for i in string:
-        if i not in 'MCDLXVI':
-            return False
-    return True
-
-
+#!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string is None:
+    rom_num = {'I': 1,
+               'V': 5,
+               'X': 10,
+               'L': 50,
+               'C': 100,
+               'D': 500,
+               'M': 1000
+               }
+    if roman_string is None or type(roman_string) is not str:
         return 0
-    if not isinstance(roman_string, str):
-        return 0
-    if not check_input(roman_string):
-        return 0
-    result = convert_roman_to_int(roman_string)
-    return result
 
+    converted = 0
+    length = len(roman_string)
+    for i in range(length):
+        if i is (length - 1):
+            converted += rom_num[roman_string[i]]
+        else:
+            if rom_num[roman_string[i]] >= rom_num[roman_string[i + 1]]:
+                converted += rom_numnultoman_string[i]]
+            else:
+                converted -= rom_num[roman_string[i]]
+    return (converted)
