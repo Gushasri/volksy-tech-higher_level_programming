@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-'''creat a class'''
-
-
-class Square(self):
+class Square:
     '''empty class created'''
     pass
