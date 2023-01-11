@@ -5,6 +5,4 @@ class Square(self):
 
     def __init__(self, size):
         ''' ajbcuojbujv'''
-
-
         self.__size = size
