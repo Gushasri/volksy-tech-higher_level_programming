@@ -2,7 +2,7 @@
 """ hello 1 """
 
 
-class Square(self):
+class Square:
     ''' second program '''
     def __init__(self, size):
         ''' ajbcuojbujv '''
