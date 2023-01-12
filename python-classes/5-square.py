@@ -4,7 +4,6 @@
 
 class Square:
     """class square"""
-    
     def __init__(self, size=0):
         self.size = size
 
@@ -31,4 +30,3 @@ class Square:
             for j in range(0, self.__size):
                 print("#", end="")
             print()
-
