@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 class Square(self):
-    ''' ushasri'''
+    ''' second program'''
 
 
     def __init__(self, size):
