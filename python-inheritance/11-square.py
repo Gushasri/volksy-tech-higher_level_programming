@@ -1,23 +1,19 @@
 #!/usr/bin/python3
+"""initializate"""
+
 Rectangle = __import__('9-rectangle').Rectangle
-"""mdoddwokwpdkwpdk"""
 
 
 class Square(Rectangle):
-    """Square class that inherits from Rectangle that inherits BaseGeometry"""
+    """ Square2"""
 
     def __init__(self, size):
-        """Method for initialized the attrubutes"""
-
-        super().__init__(size, size)
+        """initial attributes"""
         self.integer_validator("size", size)
+        super().__init__(size, size)
         self.__size = size
-
-    def area(self):
-        """rectangle area"""
-
-        return self.__size ** 2
+        self.area()
 
     def __str__(self):
-        """ kjnuin"""
+        """str"""
         return "[Square] {}/{}".format(self.__size, self.__size)
