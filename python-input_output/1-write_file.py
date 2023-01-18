@@ -5,8 +5,8 @@
 def write_file(filename="", text=""):
     '''ushasri'''
     with open(filename, encoding='utf-8')as file:
-        line = file.readline()
         ccount = 0
+        line = file.readline()
         for line in f:
-        ccount = ccount+len(line)
+            ccount = ccount+len(line)
     return ccount
