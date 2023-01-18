@@ -2,8 +2,9 @@
 '''ushahsdifiles reading'''
 
 
-def read_file(filename="usha.txt"):
+def read_file(filename=""):
     '''reading usha file'''
-    with open("usha.txt", "r") as gg:
+    with open(filename,"r") as file:
+        print(file.read())
 
         
