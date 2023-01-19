@@ -13,4 +13,3 @@ of characters written. Overwrites existing content.
     with open(filename, 'w', encoding='utf-8') as file:
         chars_written = file.write(text)
         return chars_written
-Footer
