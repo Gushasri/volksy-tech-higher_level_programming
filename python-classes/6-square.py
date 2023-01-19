@@ -102,3 +102,5 @@ class Square:
                 for col in range(0, self.__size):
                     print("#", end="")
                     print()
+
+#        print("size: {} position: {}".format(self.__size, self.__position))
