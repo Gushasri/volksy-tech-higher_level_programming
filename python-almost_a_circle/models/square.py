@@ -12,7 +12,7 @@ class Square(Rectangle):
     def _str_(self):
         """return string representation of Rectangle"""
         return '[' + type(self).__name__ + '] (' + str(self.id) \
-            + ') ' + str(self.__x) + '/' + str(self.__y) + ' - ' \
+            + ') ' + str(self.x) + '/' + str(self.y) + ' - ' \
             + str(self.size)
 
     def update(self, *args, **kwargs):
