@@ -5,14 +5,14 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """Square class"""
-    def _init_(self, size, x=0, y=0, id=None):
+    def __init__(self, size, x=0, y=0, id=None):
         """Initializer for Square class"""
-        super()._init_(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
-    def _str_(self):
+    def __str__(self):
         """return string representation of Rectangle"""
-        return '[' + type(self)._name_ + '] (' + str(self.id) \
-            + ') ' + str(self.x) + '/' + str(self.y) + ' - ' \
+        return '[' + type(self).__name__ + '] (' + str(self.id) \
+            + ') ' + str(self.__x) + '/' + str(self.__y) + ' - ' \
             + str(self.size)
 
     def update(self, *args, **kwargs):
