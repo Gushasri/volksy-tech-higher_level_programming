@@ -25,7 +25,7 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(" " * self._x + "#" * self._width)
 
-    def _str_(self):
+    def __str__(self):
         """return string representation of Rectangle"""
         return '[' + type(self)._name_ + '] (' + str(self.id) \
             + ') ' + str(self._x) + '/' + str(self._y) + ' - ' \
