@@ -37,7 +37,7 @@ class Base:
         Writes the JSON string representation of a
         list of instances to a file
         """
-        filename = cls._name_ + ".json"
+        filename = cls.__name__ + ".json"
         dicList = []
         if list_objs is not None:
             for obj in list_objs:
@@ -61,7 +61,7 @@ class Base:
         Returns an instance with all attributes already
         set.
         """
-        if cls._name_ == "Rectangle":
+        if cls.__name__ == "Rectangle":
             dummy = cls(1, 1, 0, 0, 'a')
         if cls._name_ == "Square":
             dummy = cls(1, 0, 0, 'b')
@@ -71,7 +71,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns a list of instances from a .json file"""
-        filename = cls._name_ + ".json"
+        filename = cls.__name__ + ".json"
         try:
             with open(filename, mode='r', encoding='utf-8') as f:
                 json_string = f.read()
