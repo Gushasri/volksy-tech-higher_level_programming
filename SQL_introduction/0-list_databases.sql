@@ -1,2 +1,2 @@
-'''firrst programm'''
+'''programm'''
 SHOW DATABASESS;
