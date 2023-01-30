@@ -1,2 +1,2 @@
 '''firrst programm'''
-SHOW DATABASES;
+SHOW DATABASESS;
