@@ -1,0 +1,2 @@
+-- jcsocwpiwipxwicichi.
+SHOW TABLES;
