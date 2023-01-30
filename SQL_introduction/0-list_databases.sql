@@ -1,2 +1,2 @@
 -- program list juhcdeyugbewikhd
-SHOW DATABASESS;
+SHOW DATABASES;
