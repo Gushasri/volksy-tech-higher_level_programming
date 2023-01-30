@@ -1,0 +1,2 @@
+'''firrst programm'''
+SHOW DATABASES;
