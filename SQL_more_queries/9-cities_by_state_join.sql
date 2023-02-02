@@ -1,3 +1,3 @@
 -- fidcciyde75sfz.
-SELECT C.id,c.name,s.name FROM city AS c INNER JOIN states on s.id=c.state_id
-ORDER BY cities.id;
+SELECT c.id,c.name,s.name FROM city AS c INNER JOIN states AS s ON s.id=c.state_id
+ORDER BY c.id;
