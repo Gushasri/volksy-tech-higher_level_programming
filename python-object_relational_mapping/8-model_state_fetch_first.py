@@ -1,14 +1,22 @@
 #!/usr/bin/python3
-import json
-"""JavaScript Object Notation"""
+"""
+prints the first State object from the database hbtn_0e_6_usa
+"""
+from sys import argv
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import Session
+from model_state import Base, State
 
 
-def load_from_json_file(filename):
-    """creates an Object from a JSON file
-    Args:
-        filename(str): filename
-    Returns:
-        returns object created from JSON file
-    """
-    with open(filename, mode="r", encoding="utf-8") as a_file:
-        return json.load(a_file)
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
+                           (argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
+
+    session = Session(engine)
+    state = session.query(State).order_by(State.id).first()
+    if state:
+        print("{}: {}".format(state.id, state.name))
+    else:
+        print("Nothing")
+    session.close()
