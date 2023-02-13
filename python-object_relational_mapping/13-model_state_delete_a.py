@@ -1,40 +1,24 @@
 #!/usr/bin/python3
-'''chchudcudxj'''
-class Student:
-    """creates a class Student"""
-    def __init__(self, first_name, last_name, age):
-        """initialize instance attributes
-        Args:
-            first_name(str): first name
-            last_name(str): last name
-            age(int): age
-        """
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
+"""
+changes the name of a State object from the database hbtn_0e_6_usa
+"""
+from sys import argv
+from sqlalchemy import (create_engine)
+from model_state import Base, State
+from sqlalchemy.orm import Session
 
-    def to_json(self, attrs=None):
-        """retrieves a dictionary representation of a Student instance
-        Args:
-            attrs(list): a list of attributes
-        Returns:
-            a dictionary representation of a Student instance
-        """
-        new = {}
-        i = 0
-        count = 0
-        if type(attrs) is list:
-            for key in attrs:
-                if key in self.__dict__:
-                    new[key] = self.__dict__[key]
-            return new
-        return self.__dict__
 
-    def reload_from_json(self, json):
-        """replaces all attributes of the Student instance
-        Args:
-            json(dict): a dictionary
-        """
-        if not json:
-            return
-        self.__dict__ = json
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
+                           (argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
+
+    session = Session(engine)
+
+    for state in session.query(State).order_by(State.id).all():
+        for c in state.name:
+            if c == 'a':
+                session.delete(state)
+                break
+    session.commit()
+    session.close()
