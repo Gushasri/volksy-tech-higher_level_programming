@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 '''uhfcisjdxoww'''
-
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
