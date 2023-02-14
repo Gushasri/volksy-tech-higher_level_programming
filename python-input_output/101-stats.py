@@ -1,13 +1,5 @@
 #!/usr/bin/python3
-'''tats.py
-# Brennan D Baraban <375@holbertonschool.com>
-"""Reads from standard input and computes metrics.
-After every ten lines or the input of a keyboard interruption (CTRL + C),
-prints the following statistics:
-    - Total file size up to that point.
-    - Count of read status codes up to that point.
-"""
-'''
+'''ucutgdytyfiyglu'''
 def print_stats(size, status_codes):
     """Print accumulated metrics.
     Args:
