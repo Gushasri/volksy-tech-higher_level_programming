@@ -1,40 +1,20 @@
 #!/usr/bin/python3
-'''cdvrdefcdvrv'''
-class Student:
-    """creates a class Student"""
-    def __init__(self, first_name, last_name, age):
-        """initialize instance attributes
-        Args:
-            first_name(str): first name
-            last_name(str): last name
-            age(int): age
-        """
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
+'''00-append_after.pBrennan D Baraban <375@holbertonschool.com>
+"""Defines a text file insertion function."""'''
 
-    def to_json(self, attrs=None):
-        """retrieves a dictionary representation of a Student instance
-        Args:
-            attrs(list): a list of attributes
-        Returns:
-            a dictionary representation of a Student instance
-        """
-        new = {}
-        i = 0
-        count = 0
-        if type(attrs) is list:
-            for key in attrs:
-                if key in self.__dict__:
-                    new[key] = self.__dict__[key]
-            return new
-        return self.__dict__
 
-    def reload_from_json(self, json):
-        """replaces all attributes of the Student instance
-        Args:
-            json(dict): a dictionary
-        """
-        if not json:
-            return
-        self.__dict__ = json
+def append_after(filename="", search_string="", new_string=""):
+    """Insert text after each line containing a given string in a file.
+    Args:
+        filename (str): The name of the file.
+        search_string (str): The string to search for within the file.
+        new_string (str): The string to insert.
+    """
+    text = ""
+    with open(filename) as r:
+        for line in r:
+            text += line
+            if search_string in line:
+                text += new_string
+    with open(filename, "w") as w:
+        w.write(text)
