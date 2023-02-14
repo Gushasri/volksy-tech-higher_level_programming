@@ -8,7 +8,6 @@ prints the following statistics:
     - Count of read status codes up to that point.
 """
 '''
-
 def print_stats(size, status_codes):
     """Print accumulated metrics.
     Args:
@@ -46,6 +45,8 @@ if __name__ == "__main__":
                 if line[-2] in valid_codes:
                     if status_codes.get(line[-2], -1) == -1:
                         status_codes[line[-2]] = 1
+                    else:
+                        status_codes[line[-2]] += 1
             except IndexError:
                 pass
 
