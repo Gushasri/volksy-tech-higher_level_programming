@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 '''ucutgdytyfiyglu'''
+
+
 def print_stats(size, status_codes):
     """Print accumulated metrics.
     Args:
