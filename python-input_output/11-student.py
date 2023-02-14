@@ -1,23 +1,22 @@
 #!/usr/bin/python3
-"""Defines a class Student."""
-
+'''9uuf8o6tdt7ty'''
 
 class Student:
-    """Represent a student."""
+    """creates a class Student"""
+    def __init__(self, first_name, last_name, age):
+        """initialize instance attributes
+        Args:
+            first_name(str): first name
+            last_name(str): last name
+            age(int): age
+        """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-    def __init__(self, first_name, last_name, age):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-
-    def to_json(self, attrs=None):
-        """Get a dictionary representation of the Student."""
-        if (type(attrs) == list and
-                all(type(ele) == str for ele in attrs)):
-            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
-        return self.__dict__
-
-    def reload_from_json(self, json):
-        """Replace all attributes of the Student."""
-        for k, v in json.items():
-            setattr(self, k, v)
+    def to_json(self):
+        """retrieves a dictionary representation of a Student instance
+        Returns:
+            a dictionary representation of a Student instance
+        """
+        return self.__dict__
