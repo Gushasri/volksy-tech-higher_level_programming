@@ -78,7 +78,7 @@ def xout(board, row, col):
     c = col - 1
     for r in range(row + 1, len(board)):
         if c < 0:
-             break
+            break
         board[r][c] = "x"
         c -= 1
 
@@ -123,4 +123,3 @@ if __name__ == "__main__":
     solutions = recursive_solve(board, 0, 0, [])
     for sol in solutions:
         print(sol)
-
